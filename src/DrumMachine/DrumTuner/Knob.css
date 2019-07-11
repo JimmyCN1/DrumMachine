@@ -3,7 +3,7 @@
   position: relative;
 }
 .knob .ticks {
-  position: relative;
+  position: absolute;
 }
 .knob .ticks .tick {
   position: absolute;
