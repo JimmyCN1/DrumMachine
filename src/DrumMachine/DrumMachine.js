@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import DrumMachineHeader from "./DrumMachineHeader";
-import DrumKit from "./DrumKit";
-import DrumTuner from "./DrumTuner";
+import DrumKit from "./DrumKit/DrumKit";
+import DrumTuner from "./DrumTuner/DrumTuner";
 
 function DrumMachine() {
   const drumMachineStyle = {
