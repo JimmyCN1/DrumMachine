@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import VolumeContext from "../VolumeContext";
 import Knob from "./Knob";
 
 function DrumTuner() {
-  const [value, setValue] = useState(100);
+  const { volume, setVolume } = useContext(VolumeContext);
+  console.log(volume);
 
-  // handleChange = newValue => {
-  //   this.setState({
-  //     value: newValue
-  //   });
-  // };
-
-  const drumTunerStyle = {
-    padding: "30px 0px 30px 0px"
-  };
+  const drumTunerStyle =
+    window.innerWidth > 768
+      ? {
+          padding: "30px 30px 0px 0px"
+        }
+      : {
+          padding: "30px 0px"
+        };
 
   const displayStyle = {
     width: "200px",
@@ -26,19 +26,17 @@ function DrumTuner() {
 
   const knobExtraStyling = {
     position: "relative",
-    // margin: "100px 50px 50px 50px"
     top: "20px",
     right: "15px"
   };
 
   return (
-    <div className="col-md-4">
-      <div className="container" style={drumTunerStyle}>
+    <div className="col-md-4" style={drumTunerStyle}>
+      <div className="container">
         <div className="row justify-content-center">
-          <div style={displayStyle}>{value}</div>
+          <div style={displayStyle}>{volume}</div>
         </div>
         <div className="row justify-content-center">
-          {/* <div>volume</div> */}
           <div style={knobExtraStyling}>
             <Knob
               size={100}
@@ -46,19 +44,10 @@ function DrumTuner() {
               degrees={260}
               min={1}
               max={100}
-              value={value}
+              value={volume}
               color={true}
-              onChange={newValue => setValue(newValue)}
+              onChange={newVolume => setVolume(newVolume)}
             />
-
-            {/* <Knob
-              numTicks={125}
-              degrees={180}
-              min={1}
-              max={100}
-              value={0}
-              onChange={value => setValue(value)}
-            /> */}
           </div>
         </div>
         <div className="row justify-content-center">

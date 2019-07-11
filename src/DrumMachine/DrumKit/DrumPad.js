@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import VolumeContext from "../VolumeContext";
 
 function DrumPad({ padName }) {
+  const { volume, setVolume } = useContext(VolumeContext);
+  console.log(volume);
+
   let buttonStyle = {
     // textDecoration: "none !important",
     // backgroundColor: "transparent",
