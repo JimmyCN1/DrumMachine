@@ -8,6 +8,7 @@ function DrumMachine() {
   const drumMachineStyle = {
     height: "auto",
     width: "800px",
+    padding: "10px",
     border: "solid",
     borderWidth: "5px"
   };
