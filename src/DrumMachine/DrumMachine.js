@@ -1,14 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import VolumeContext from "./VolumeContext";
 import DrumMachineHeader from "./DrumMachineHeader";
-import DrumKit from "./DrumKit/DrumKit";
-import DrumTuner from "./DrumTuner/DrumTuner";
+import DrumKit from "./drumKit/DrumKit";
+import DrumTuner from "./drumTuner/DrumTuner";
 
 function DrumMachine() {
   const [volume, setVolume] = useState(100);
-
-  // console.log(volume);
 
   const drumMachineStyle = {
     height: "auto",

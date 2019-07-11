@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import DrumMachine from "./DrumMachine/DrumMachine";
+import DrumMachine from "./drumMachine/DrumMachine";
 
 function App() {
   return (

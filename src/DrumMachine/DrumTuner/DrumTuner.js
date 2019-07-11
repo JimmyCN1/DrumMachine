@@ -4,7 +4,6 @@ import Knob from "./Knob";
 
 function DrumTuner() {
   const { volume, setVolume } = useContext(VolumeContext);
-  console.log(volume);
 
   const drumTunerStyle =
     window.innerWidth > 768
