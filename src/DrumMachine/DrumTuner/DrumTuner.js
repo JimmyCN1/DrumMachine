@@ -18,14 +18,17 @@ function DrumTuner() {
   const displayStyle = {
     width: "200px",
     height: "50px",
-    border: "noned",
+    border: "none",
     textAlign: "center",
     backgroundColor: "black",
     color: "red"
   };
 
   const knobExtraStyling = {
-    margin: "100px 50px 50px 50px"
+    position: "relative",
+    // margin: "100px 50px 50px 50px"
+    top: "20px",
+    right: "15px"
   };
 
   return (
