@@ -94,10 +94,6 @@ class Knob extends React.Component {
     return JSON.parse(JSON.stringify(o));
   };
 
-  componentDidUpdate() {
-    /* ... */
-  }
-
   render() {
     let { active, setActive } = this.context;
     let kStyle = {

@@ -4,8 +4,7 @@ import VolumeContext from "../VolumeContext";
 
 function Display() {
   const { volume } = useContext(VolumeContext);
-  const { active, setActive } = useContext(ActiveContext);
-  // console.log(active);
+  const { active } = useContext(ActiveContext);
 
   const toDisplay = {
     volume: `Volume: ${volume}`,

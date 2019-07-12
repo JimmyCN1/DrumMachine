@@ -25,10 +25,10 @@ const sounds = {
 };
 
 function DrumPad({ name, padName }) {
-  const { volume, setVolume } = useContext(VolumeContext);
-  const { active, setActive } = useContext(ActiveContext);
+  const { volume } = useContext(VolumeContext);
+  const { setActive } = useContext(ActiveContext);
 
-  let [playing, play] = useState(false);
+  let [play] = useState(false);
   const sample = new Audio();
   sample.src = sounds[name];
   sample.autoplay = false;
@@ -36,12 +36,10 @@ function DrumPad({ name, padName }) {
   const handleClick = (name, sound) => {
     setActive(name);
     console.log(name);
-    // console.log(sound);
     return sound;
   };
 
   play = () => {
-    // console.log(sample.volume);
     sample.volume = volume / 100;
     sample.play();
   };
@@ -59,7 +57,6 @@ function DrumPad({ name, padName }) {
     height: "75px",
     width: "75px",
     margin: "3px"
-    // padding: "25px"
   };
 
   if (window.innerWidth > 300) {
