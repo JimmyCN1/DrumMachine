@@ -19,35 +19,35 @@ function DrumKit() {
       <div className="container" style={drumKitStyle}>
         <div className="row">
           <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Crash 1" />
+            <DrumPad name="crash1" padName="Crash 1" />
           </div>
           <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Ride" />
+            <DrumPad name="ride" padName="Ride" />
           </div>
           <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Crash 2" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Hi-Hat" />
-          </div>
-          <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Tom 1" />
-          </div>
-          <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Floor Tom" />
+            <DrumPad name="crash2" padName="Crash 2" />
           </div>
         </div>
         <div className="row">
           <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Snare" />
+            <DrumPad name="hiHat" padName="Hi-Hat" />
           </div>
           <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Kick" />
+            <DrumPad name="tom1" padName="Tom 1" />
           </div>
           <div className="col-4" style={newColStyle}>
-            <DrumPad padName="Clap" />
+            <DrumPad name="floorTom" padName="Floor Tom" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-4" style={newColStyle}>
+            <DrumPad name="snare" padName="Snare" />
+          </div>
+          <div className="col-4" style={newColStyle}>
+            <DrumPad name="kick" padName="Kick" />
+          </div>
+          <div className="col-4" style={newColStyle}>
+            <DrumPad name="clap" padName="Clap" />
           </div>
         </div>
       </div>
