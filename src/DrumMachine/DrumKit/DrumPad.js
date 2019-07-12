@@ -56,8 +56,10 @@ function DrumPad({ name, padName }) {
   };
 
   let buttonStyleSmall = {
-    margin: "3px",
-    padding: "25px"
+    height: "75px",
+    width: "75px",
+    margin: "3px"
+    // padding: "25px"
   };
 
   if (window.innerWidth > 300) {

@@ -26,7 +26,9 @@ function Display() {
     border: "none",
     textAlign: "center",
     backgroundColor: "black",
-    color: "red"
+    color: "red",
+    fontSize: "190%",
+    fontWeight: "bold"
   };
 
   return (
