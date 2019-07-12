@@ -9,7 +9,7 @@ function DrumKit() {
   };
 
   const newColStyle = {
-    // padding: "0px",
+    padding: "0px",
     display: "flex",
     justifyContent: "space-around"
   };

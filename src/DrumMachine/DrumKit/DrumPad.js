@@ -1,10 +1,8 @@
 import React, { useState, useContext } from "react";
 import VolumeContext from "../VolumeContext";
-// import useAudio from "./UseAudio";
-
-// const player = require("node-wav-player");
 
 const sounds = {
+  src: "https://sampleswap.org/index.php",
   crash1:
     "https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Crashes/92[kb]909-bright-crash.aif.mp3",
   ride:
@@ -27,7 +25,6 @@ const sounds = {
 
 function DrumPad({ name, padName }) {
   const { volume, setVolume } = useContext(VolumeContext);
-  // const [playing, play] = useAudio("./sounds/clap.wav");
   let [playing, play] = useState(false);
   const sample = new Audio();
   sample.src = sounds[name];
@@ -43,8 +40,10 @@ function DrumPad({ name, padName }) {
   let buttonStyle = {
     border: "none",
     textAlign: "center",
+    height: "150px",
+    width: "150px",
     margin: "5px",
-    padding: "40px",
+    // padding: "40px",
     boxShadow: "3px 3px black"
   };
 
@@ -56,7 +55,7 @@ function DrumPad({ name, padName }) {
   if (window.innerWidth > 300) {
     return (
       <button className="btn btn-primary" style={buttonStyle} onClick={play}>
-        {`${padName} ${volume}`}
+        {`${padName}`}
       </button>
     );
   } else {

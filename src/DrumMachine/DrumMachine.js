@@ -13,7 +13,8 @@ function DrumMachine() {
     width: "800px",
     padding: "10px",
     border: "solid",
-    borderWidth: "5px"
+    borderWidth: "5px",
+    backgroundColor: "silver"
   };
 
   return (
