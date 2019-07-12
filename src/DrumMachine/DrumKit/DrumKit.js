@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import VolumeContext from "../VolumeContext";
 
 import DrumPad from "./DrumPad";
 

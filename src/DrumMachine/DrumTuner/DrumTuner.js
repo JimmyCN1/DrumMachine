@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import VolumeContext from "../VolumeContext";
+import Display from "./Display";
 import Knob from "./Knob";
 
 function DrumTuner() {
@@ -14,15 +15,6 @@ function DrumTuner() {
           padding: "30px 0px"
         };
 
-  const displayStyle = {
-    width: "200px",
-    height: "50px",
-    border: "none",
-    textAlign: "center",
-    backgroundColor: "black",
-    color: "red"
-  };
-
   const knobExtraStyling = {
     position: "relative",
     height: "150px",
@@ -35,7 +27,7 @@ function DrumTuner() {
     <div className="col-md-4" style={drumTunerStyle}>
       <div className="container">
         <div className="row justify-content-center">
-          <div style={displayStyle}>{`Volume: ${volume}`}</div>
+          <Display />
         </div>
         <div className="row justify-content-center">
           <div style={knobExtraStyling}>

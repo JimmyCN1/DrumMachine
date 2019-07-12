@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import ActiveContext from "./ActiveContext";
 import VolumeContext from "./VolumeContext";
 import DrumMachineHeader from "./DrumMachineHeader";
 import DrumKit from "./drumKit/DrumKit";
@@ -7,6 +8,7 @@ import DrumTuner from "./drumTuner/DrumTuner";
 
 function DrumMachine() {
   const [volume, setVolume] = useState(100);
+  const [active, setActive] = useState("volume");
 
   const drumMachineStyle = {
     height: "auto",
@@ -20,11 +22,13 @@ function DrumMachine() {
   return (
     <div className="container" style={drumMachineStyle}>
       <VolumeContext.Provider value={{ volume, setVolume }}>
-        <DrumMachineHeader />
-        <div className="row">
-          <DrumKit />
-          <DrumTuner />
-        </div>
+        <ActiveContext.Provider value={{ active, setActive }}>
+          <DrumMachineHeader />
+          <div className="row">
+            <DrumKit />
+            <DrumTuner />
+          </div>
+        </ActiveContext.Provider>
       </VolumeContext.Provider>
     </div>
   );

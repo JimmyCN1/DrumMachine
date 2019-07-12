@@ -1,4 +1,5 @@
 import React from "react";
+import ActiveContext from "../ActiveContext";
 
 import "./Knob.css";
 
@@ -23,6 +24,7 @@ class Knob extends React.Component {
 
   startDrag = e => {
     e.preventDefault();
+
     const knob = e.target.getBoundingClientRect();
     const pts = {
       x: knob.left + knob.width / 2,
@@ -92,7 +94,12 @@ class Knob extends React.Component {
     return JSON.parse(JSON.stringify(o));
   };
 
+  componentDidUpdate() {
+    /* ... */
+  }
+
   render() {
+    let { active, setActive } = this.context;
     let kStyle = {
       width: this.props.size,
       height: this.props.size
@@ -129,7 +136,14 @@ class Knob extends React.Component {
               ))
             : null}
         </div>
-        <div className="knob outer" style={oStyle} onMouseDown={this.startDrag}>
+        <div
+          className="knob outer"
+          style={oStyle}
+          onMouseDown={e => {
+            setActive("volume");
+            this.startDrag(e);
+          }}
+        >
           <div className="knob inner" style={iStyle}>
             <div className="grip" />
           </div>
@@ -146,5 +160,7 @@ Knob.defaultProps = {
   degrees: 270,
   value: 0
 };
+
+Knob.contextType = ActiveContext;
 
 export default Knob;

@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import ActiveContext from "../ActiveContext";
 import VolumeContext from "../VolumeContext";
 
 const sounds = {
@@ -25,14 +26,22 @@ const sounds = {
 
 function DrumPad({ name, padName }) {
   const { volume, setVolume } = useContext(VolumeContext);
+  const { active, setActive } = useContext(ActiveContext);
+
   let [playing, play] = useState(false);
   const sample = new Audio();
   sample.src = sounds[name];
   sample.autoplay = false;
 
+  const handleClick = (name, sound) => {
+    setActive(name);
+    console.log(name);
+    // console.log(sound);
+    return sound;
+  };
+
   play = () => {
-    console.log("played");
-    console.log(sample);
+    // console.log(sample.volume);
     sample.volume = volume / 100;
     sample.play();
   };
@@ -43,7 +52,6 @@ function DrumPad({ name, padName }) {
     height: "150px",
     width: "150px",
     margin: "5px",
-    // padding: "40px",
     boxShadow: "3px 3px black"
   };
 
@@ -54,7 +62,11 @@ function DrumPad({ name, padName }) {
 
   if (window.innerWidth > 300) {
     return (
-      <button className="btn btn-primary" style={buttonStyle} onClick={play}>
+      <button
+        className="btn btn-primary"
+        style={buttonStyle}
+        onClick={() => handleClick(name, play())}
+      >
         {`${padName}`}
       </button>
     );
@@ -63,7 +75,7 @@ function DrumPad({ name, padName }) {
       <button
         className="btn btn-primary"
         style={{ ...buttonStyle, ...buttonStyleSmall }}
-        onClick={play}
+        onClick={(name, play) => handleClick(name, play())}
       >
         {padName}
       </button>

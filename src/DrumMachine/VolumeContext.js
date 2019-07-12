@@ -1,5 +1,5 @@
 import React from "react";
 
-const VolumeContext = React.createContext(100);
+const VolumeContext = React.createContext();
 
 export default VolumeContext;
